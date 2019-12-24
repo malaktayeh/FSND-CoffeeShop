@@ -1,896 +1,650 @@
 {
-	"id": "0c42ab18-01d2-49b9-8de5-2911ba147725",
-	"name": "udacity-fsnd-udaspicelatte",
-	"allTests": [],
-	"timestamp": "2019-12-24T17:44:43.302Z",
-	"collection_id": "ccb2dd7f-5e64-4677-b8f5-c46c0aa74d6a",
-	"folder_id": 0,
-	"target_type": "collection",
-	"environment_id": "0",
-	"data": [],
-	"delay": 0,
-	"count": 1,
-	"collection": {
-		"id": "ccb2dd7f-5e64-4677-b8f5-c46c0aa74d6a",
+	"info": {
+		"_postman_id": "ccb2dd7f-5e64-4677-b8f5-c46c0aa74d6a",
 		"name": "udacity-fsnd-udaspicelatte",
-		"order": [],
-		"folders_order": [
-			"f82b51df-d590-4dc3-baec-e5ff5b78c55f",
-			"fc41d70c-bf8d-49af-a4c8-32232a729124",
-			"1a76e0ff-5df4-41de-bd87-78f0146dd4e9"
-		],
-		"isFavorite": false
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
-	"folder": null,
-	"environment": null,
-	"globals": [],
-	"results": [
+	"item": [
 		{
-			"name": "/drinks",
-			"id": "b25a8f19-29a4-4176-be91-495826f73ded",
-			"url": "localhost:5000/drinks",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"tests": {
-				"Status code is 200": true,
-				"value contains drinks array": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
+			"name": "public",
+			"item": [
+				{
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "05cea6f9-9af0-4e60-9aad-4c8faf37ef4c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains drinks array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.drinks).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": []
 				},
-				"value contains drinks array": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"517"
-			],
-			"allTests": [
 				{
-					"Status code is 200": true,
-					"value contains drinks array": true
-				}
-			],
-			"time": "517",
-			"totalRequestTime": "517",
-			"iterationResults": {}
-		},
-		{
-			"name": "/drinks-detail",
-			"id": "3db2fc4a-dd1e-4ab7-9957-39fff77dd952",
-			"url": "localhost:5000/drinks-detail",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 401,
-				"name": "UNAUTHORIZED",
-				"detail": {
-					"name": "Unauthorized",
-					"detail": "Similar to 403 Forbidden, but specifically for use when authentication is possible but has failed or not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource."
-				}
-			},
-			"tests": {
-				"Status code is 401": true
-			},
-			"testPassFailCounts": {
-				"Status code is 401": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"508"
-			],
-			"allTests": [
-				{
-					"Status code is 401": true
-				}
-			],
-			"time": "508",
-			"totalRequestTime": "508",
-			"iterationResults": {}
-		},
-		{
-			"name": "/drinks",
-			"id": "68d5c55f-520a-4c15-9adf-5b0bb618b9ac",
-			"url": "localhost:5000/drinks",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 401,
-				"name": "UNAUTHORIZED",
-				"detail": {
-					"name": "Unauthorized",
-					"detail": "Similar to 403 Forbidden, but specifically for use when authentication is possible but has failed or not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource."
-				}
-			},
-			"tests": {
-				"Status code is 401": true
-			},
-			"testPassFailCounts": {
-				"Status code is 401": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"505"
-			],
-			"allTests": [
-				{
-					"Status code is 401": true
-				}
-			],
-			"time": "505",
-			"totalRequestTime": "505",
-			"iterationResults": {}
-		},
-		{
-			"name": "/drinks/1",
-			"id": "cca2b28f-6748-4f88-937d-bc579d0f05e4",
-			"url": "localhost:5000/drinks/1",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 401,
-				"name": "UNAUTHORIZED",
-				"detail": {
-					"name": "Unauthorized",
-					"detail": "Similar to 403 Forbidden, but specifically for use when authentication is possible but has failed or not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource."
-				}
-			},
-			"tests": {
-				"Status code is 401": true
-			},
-			"testPassFailCounts": {
-				"Status code is 401": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"506"
-			],
-			"allTests": [
-				{
-					"Status code is 401": true
-				}
-			],
-			"time": "506",
-			"totalRequestTime": "506",
-			"iterationResults": {}
-		},
-		{
-			"name": "/drinks/1",
-			"id": "7b00099f-3da6-4a87-9d06-eb8075583ce8",
-			"url": "localhost:5000/drinks/1",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 401,
-				"name": "UNAUTHORIZED",
-				"detail": {
-					"name": "Unauthorized",
-					"detail": "Similar to 403 Forbidden, but specifically for use when authentication is possible but has failed or not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource."
-				}
-			},
-			"tests": {
-				"Status code is 401": true
-			},
-			"testPassFailCounts": {
-				"Status code is 401": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"506"
-			],
-			"allTests": [
-				{
-					"Status code is 401": true
-				}
-			],
-			"time": "506",
-			"totalRequestTime": "506",
-			"iterationResults": {}
-		},
-		{
-			"name": "/drinks",
-			"id": "2449754d-f58a-4dd5-b263-e89fcd0bf9f9",
-			"url": "localhost:5000/drinks",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"tests": {
-				"Status code is 200": true,
-				"value contains drinks array": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
+					"name": "/drinks-detail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "65a195fa-a734-44b7-a7e0-c629b32d1fbb",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks-detail",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks-detail"
+							]
+						}
+					},
+					"response": []
 				},
-				"value contains drinks array": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"508"
-			],
-			"allTests": [
 				{
-					"Status code is 200": true,
-					"value contains drinks array": true
-				}
-			],
-			"time": "508",
-			"totalRequestTime": "508",
-			"iterationResults": {}
-		},
-		{
-			"name": "/drinks-detail",
-			"id": "e6998a57-33b4-4bfe-ac45-2ad22a45ab88",
-			"url": "localhost:5000/drinks-detail",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"1141"
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			],
-			"time": "1141",
-			"totalRequestTime": "1141",
-			"iterationResults": {}
-		},
-		{
-			"name": "/drinks",
-			"id": "44417fa5-607d-47a4-87e4-3e084a909aef",
-			"url": "localhost:5000/drinks",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 401,
-				"name": "UNAUTHORIZED",
-				"detail": {
-					"name": "Unauthorized",
-					"detail": "Similar to 403 Forbidden, but specifically for use when authentication is possible but has failed or not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource."
-				}
-			},
-			"tests": {
-				"Status code is 401": true
-			},
-			"testPassFailCounts": {
-				"Status code is 401": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"1042"
-			],
-			"allTests": [
-				{
-					"Status code is 401": true
-				}
-			],
-			"time": "1042",
-			"totalRequestTime": "1042",
-			"iterationResults": {}
-		},
-		{
-			"name": "/drinks/1",
-			"id": "22076b43-661d-4aef-8ea6-1d9a12b105c8",
-			"url": "localhost:5000/drinks/1",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 401,
-				"name": "UNAUTHORIZED",
-				"detail": {
-					"name": "Unauthorized",
-					"detail": "Similar to 403 Forbidden, but specifically for use when authentication is possible but has failed or not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource."
-				}
-			},
-			"tests": {
-				"Status code is 401": true
-			},
-			"testPassFailCounts": {
-				"Status code is 401": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"1009"
-			],
-			"allTests": [
-				{
-					"Status code is 401": true
-				}
-			],
-			"time": "1009",
-			"totalRequestTime": "1009",
-			"iterationResults": {}
-		},
-		{
-			"name": "/drinks/1",
-			"id": "8a63ba94-8dba-45ea-b247-66dd9650b523",
-			"url": "localhost:5000/drinks/1",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 401,
-				"name": "UNAUTHORIZED",
-				"detail": {
-					"name": "Unauthorized",
-					"detail": "Similar to 403 Forbidden, but specifically for use when authentication is possible but has failed or not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource."
-				}
-			},
-			"tests": {
-				"Status code is 401": true
-			},
-			"testPassFailCounts": {
-				"Status code is 401": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"971"
-			],
-			"allTests": [
-				{
-					"Status code is 401": true
-				}
-			],
-			"time": "971",
-			"totalRequestTime": "971",
-			"iterationResults": {}
-		},
-		{
-			"name": "/drinks",
-			"id": "f4b6e69d-2ac6-4c01-9402-4a40aa47386b",
-			"url": "localhost:5000/drinks",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"tests": {
-				"Status code is 200": true,
-				"value contains drinks array": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5050a5b9-2e15-474e-9981-0e61ec8d2ff1",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": []
 				},
-				"value contains drinks array": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"507"
-			],
-			"allTests": [
 				{
-					"Status code is 200": true,
-					"value contains drinks array": true
-				}
-			],
-			"time": "507",
-			"totalRequestTime": "507",
-			"iterationResults": {}
-		},
-		{
-			"name": "/drinks-detail",
-			"id": "4260e596-e902-4ecf-b823-a696389c614e",
-			"url": "localhost:5000/drinks-detail",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"tests": {
-				"Status code is 200": true,
-				"value contains drinks array": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ec1488aa-b4d7-468a-89f5-03484009e69c",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": []
 				},
-				"value contains drinks array": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"992"
-			],
-			"allTests": [
 				{
-					"Status code is 200": true,
-					"value contains drinks array": true
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0aea66ad-0a6e-4533-b192-a8b0af746c78",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			],
-			"time": "992",
-			"totalRequestTime": "992",
-			"iterationResults": {}
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "/drinks",
-			"id": "4e0cc70e-88b7-45d5-a2ec-83adf72107f2",
-			"url": "localhost:5000/drinks",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"1026"
-			],
-			"allTests": [
+			"name": "barista",
+			"item": [
 				{
-					"Status code is 200": true
-				}
-			],
-			"time": "1026",
-			"totalRequestTime": "1026",
-			"iterationResults": {}
-		},
-		{
-			"name": "/drinks/1",
-			"id": "365e7a5a-30bb-4397-b6fc-9efb34968adc",
-			"url": "localhost:5000/drinks/1",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"tests": {
-				"Status code is 200": true,
-				"value contains drinks array": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "05cea6f9-9af0-4e60-9aad-4c8faf37ef4c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains drinks array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.drinks).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": []
 				},
-				"value contains drinks array": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"1011"
-			],
-			"allTests": [
 				{
-					"Status code is 200": true,
-					"value contains drinks array": true
+					"name": "/drinks-detail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "65a195fa-a734-44b7-a7e0-c629b32d1fbb",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks-detail",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks-detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5050a5b9-2e15-474e-9981-0e61ec8d2ff1",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik4wTkNOVEEzTWpaQ1FUa3lRMEl6TmtORk0wWXhRVFUwT1RFMFFVVkNSRUpDT1RBME1EUXpOUSJ9.eyJpc3MiOiJodHRwczovL3VkYWNpdHktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDY3MTQ4MTQ0MTcwNjk3MTI4OTMiLCJhdWQiOlsiZGV2IiwiaHR0cHM6Ly91ZGFjaXR5LWZzbmQuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTU2MDg5MDE2MCwiZXhwIjoxNTYwODk3MzYwLCJhenAiOiJPSjVwQk9ZSURFa09FVFVmUWo1ajdsSDZFTFcwMkd1MCIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6ZHJpbmtzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.j9ocW47_exQOkEa10ffh8eijGvrIMxnGRzCmbrXnfaN_8ULsgA7AnWYMtvP8RmPWvT9n8sReWnFuJajUHBUbnBO2GuJ4aM3-WDUBeJT0X_mpGUWs4lxaNTbIkWdiWPTsEiRnP3wT-dU_v3Olw2PB4UMajMIjSH-IdF2Y1CiJIOaM0gV44RGZRyRvj6C2_mOkMfoXxzw-HrVvTRCo1NcUPea5Bs04POni7azx-B7FstP_HLm0dEbbge4XbmovHwlIXknIoI8PbuGXeLBqE2hv8fErKFBuIykxzK0nErH5zSPCrkM-_9smb8TLGAH-E5j1KQb6SHDKtcV_QHnsUYFuXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ec1488aa-b4d7-468a-89f5-03484009e69c",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0aea66ad-0a6e-4533-b192-a8b0af746c78",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			],
-			"time": "1011",
-			"totalRequestTime": "1011",
-			"iterationResults": {}
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlFUTTROMFJHTmtVd1JFRXdORE5DTWpOQ05qSTVOREJDUlRNMlEwSTRPRFpGUVRRMVEwWTRSQSJ9.eyJpc3MiOiJodHRwczovL2ZzbmR1ZGFjaXR5LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTAwMjQ2YjcyYWZlNjBlN2UxZjE1MzgiLCJhdWQiOiJjb2ZmZWUtc2hvcCIsImlhdCI6MTU3NzIxNTkwNCwiZXhwIjoxNTc3MzAyMzA0LCJhenAiOiJOTUo3QjRLUnZUSTBrcld0SXkxc1hZNzBtR2Z4R3NqcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.dF_K-BC8AkXPhgpHG6POcJdgDbEvSVb4z1zfr-CPiTng9tZpB1FIBMOdc5Ue3mS3uxAu1a1fVVNTHE5CzmrAQ7fORmaTWNrOEP7RApGgdrNCB-uHUwwtXLoVrmpuhiCLMBUJNWnQqD5LeBn7pFzqkD8Fp2bLofj_prW98PKJHCUJg1Nff4ws55hFsVW1ugCzI99J6eLc41sc0SAz37tJvYKdvSVSzXbC2_ZHnydroxNJ47zCTBWnaCReoyXD7zPZGOeBFUQhKllaphU-wvc6DVsVNzIkoz8XB9s-0GuyokmoD1nt0hChnLvaUcPX2Ie1B8DKjWG0VcGRl6FmPiKByA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f985b22c-34c4-4cfe-8308-f6fb98d799ac",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "596425ac-59b4-4488-9f07-4c748e1ad082",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "/drinks/1",
-			"id": "b257e365-7f19-43d6-9496-9370d4d14f2a",
-			"url": "localhost:5000/drinks/1",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"973"
-			],
-			"allTests": [
+			"name": "manager",
+			"item": [
 				{
-					"Status code is 200": true
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "05cea6f9-9af0-4e60-9aad-4c8faf37ef4c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains drinks array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.drinks).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks-detail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "65a195fa-a734-44b7-a7e0-c629b32d1fbb",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains drinks array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.drinks).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks-detail",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks-detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5050a5b9-2e15-474e-9981-0e61ec8d2ff1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Water3\",\n    \"recipe\": {\n        \"name\": \"Water\",\n        \"color\": \"blue\",\n        \"parts\": 1\n    }\n}"
+						},
+						"url": {
+							"raw": "{{host}}/drinks",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ec1488aa-b4d7-468a-89f5-03484009e69c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains drinks array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.drinks).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Water5\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/drinks/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0aea66ad-0a6e-4533-b192-a8b0af746c78",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			],
-			"time": "973",
-			"totalRequestTime": "973",
-			"iterationResults": {}
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlFUTTROMFJHTmtVd1JFRXdORE5DTWpOQ05qSTVOREJDUlRNMlEwSTRPRFpGUVRRMVEwWTRSQSJ9.eyJpc3MiOiJodHRwczovL2ZzbmR1ZGFjaXR5LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTAwMjM2NWI5ZWE2YzBjZDFjNGZiNTAiLCJhdWQiOiJjb2ZmZWUtc2hvcCIsImlhdCI6MTU3NzIxNTg2NywiZXhwIjoxNTc3MzAyMjY3LCJhenAiOiJOTUo3QjRLUnZUSTBrcld0SXkxc1hZNzBtR2Z4R3NqcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRyaW5rcyIsImdldDpkcmlua3MtZGV0YWlsIiwicGF0Y2g6ZHJpbmtzIiwicG9zdDpkcmlua3MiXX0.dgaTuaCfNBJ-vTgaTC-I3kqF0CHKF42o9xGuPVIViUXrLoH-FBokvVNNOBRYoTntDuupdyutaF33m7txlAUNemGDnGtM5hdR9CAoOArrlnEMskF9V_CuNaUSvDNDg5QolxY08vMNFVd_C1OrAZylQA-q2jXPBnIYqEQpTZcOmncb3aeZ8IAFYJb-xDvrbqExBnbVks9pTi1PaQvuMZlOLZtYcdhDIfCuZ78RzN78Jqn_FjILmRCiGrab9mpHql6K1whv7PxakZuNkkqDnHNzRmt71uvGKoeHebTNUQUiezgFj7CCLGY3ZV8kYCutjIOohjlqlYFH1I7u_m3pcAiqBA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "113ee6fe-418d-4bf4-a641-444b5816e46b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "5704da6d-dc7e-42b9-8214-aa7ecf075bca",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
-	"totalPass": 20,
-	"totalFail": 0,
-	"totalTime": 11722,
-	"lifecycle": "done",
-	"requests": [
+	"event": [
 		{
-			"name": "/drinks",
-			"id": "b25a8f19-29a4-4176-be91-495826f73ded",
-			"url": "localhost:5000/drinks",
-			"time": "2019-12-24T17:44:43.302Z",
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				},
-				"value contains drinks array": {
-					"pass": 1,
-					"fail": 0
-				}
+			"listen": "prerequest",
+			"script": {
+				"id": "fc871e59-eaa4-46e8-975b-87b750ad1804",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
 			}
 		},
 		{
-			"name": "/drinks-detail",
-			"id": "3db2fc4a-dd1e-4ab7-9957-39fff77dd952",
-			"url": "localhost:5000/drinks-detail",
-			"time": "2019-12-24T17:44:43.302Z",
-			"responseCode": {
-				"code": 401,
-				"name": "UNAUTHORIZED",
-				"detail": {
-					"name": "Unauthorized",
-					"detail": "Similar to 403 Forbidden, but specifically for use when authentication is possible but has failed or not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource."
-				}
-			},
-			"testPassFailCounts": {
-				"Status code is 401": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "/drinks",
-			"id": "68d5c55f-520a-4c15-9adf-5b0bb618b9ac",
-			"url": "localhost:5000/drinks",
-			"time": "2019-12-24T17:44:43.302Z",
-			"responseCode": {
-				"code": 401,
-				"name": "UNAUTHORIZED",
-				"detail": {
-					"name": "Unauthorized",
-					"detail": "Similar to 403 Forbidden, but specifically for use when authentication is possible but has failed or not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource."
-				}
-			},
-			"testPassFailCounts": {
-				"Status code is 401": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "/drinks/1",
-			"id": "cca2b28f-6748-4f88-937d-bc579d0f05e4",
-			"url": "localhost:5000/drinks/1",
-			"time": "2019-12-24T17:44:43.302Z",
-			"responseCode": {
-				"code": 401,
-				"name": "UNAUTHORIZED",
-				"detail": {
-					"name": "Unauthorized",
-					"detail": "Similar to 403 Forbidden, but specifically for use when authentication is possible but has failed or not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource."
-				}
-			},
-			"testPassFailCounts": {
-				"Status code is 401": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "/drinks/1",
-			"id": "7b00099f-3da6-4a87-9d06-eb8075583ce8",
-			"url": "localhost:5000/drinks/1",
-			"time": "2019-12-24T17:44:43.302Z",
-			"responseCode": {
-				"code": 401,
-				"name": "UNAUTHORIZED",
-				"detail": {
-					"name": "Unauthorized",
-					"detail": "Similar to 403 Forbidden, but specifically for use when authentication is possible but has failed or not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource."
-				}
-			},
-			"testPassFailCounts": {
-				"Status code is 401": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "/drinks",
-			"id": "2449754d-f58a-4dd5-b263-e89fcd0bf9f9",
-			"url": "localhost:5000/drinks",
-			"time": "2019-12-24T17:44:43.302Z",
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				},
-				"value contains drinks array": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "/drinks-detail",
-			"id": "e6998a57-33b4-4bfe-ac45-2ad22a45ab88",
-			"url": "localhost:5000/drinks-detail",
-			"time": "2019-12-24T17:44:43.302Z",
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "/drinks",
-			"id": "44417fa5-607d-47a4-87e4-3e084a909aef",
-			"url": "localhost:5000/drinks",
-			"time": "2019-12-24T17:44:43.302Z",
-			"responseCode": {
-				"code": 401,
-				"name": "UNAUTHORIZED",
-				"detail": {
-					"name": "Unauthorized",
-					"detail": "Similar to 403 Forbidden, but specifically for use when authentication is possible but has failed or not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource."
-				}
-			},
-			"testPassFailCounts": {
-				"Status code is 401": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "/drinks/1",
-			"id": "22076b43-661d-4aef-8ea6-1d9a12b105c8",
-			"url": "localhost:5000/drinks/1",
-			"time": "2019-12-24T17:44:43.302Z",
-			"responseCode": {
-				"code": 401,
-				"name": "UNAUTHORIZED",
-				"detail": {
-					"name": "Unauthorized",
-					"detail": "Similar to 403 Forbidden, but specifically for use when authentication is possible but has failed or not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource."
-				}
-			},
-			"testPassFailCounts": {
-				"Status code is 401": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "/drinks/1",
-			"id": "8a63ba94-8dba-45ea-b247-66dd9650b523",
-			"url": "localhost:5000/drinks/1",
-			"time": "2019-12-24T17:44:43.302Z",
-			"responseCode": {
-				"code": 401,
-				"name": "UNAUTHORIZED",
-				"detail": {
-					"name": "Unauthorized",
-					"detail": "Similar to 403 Forbidden, but specifically for use when authentication is possible but has failed or not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource."
-				}
-			},
-			"testPassFailCounts": {
-				"Status code is 401": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "/drinks",
-			"id": "f4b6e69d-2ac6-4c01-9402-4a40aa47386b",
-			"url": "localhost:5000/drinks",
-			"time": "2019-12-24T17:44:43.302Z",
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				},
-				"value contains drinks array": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "/drinks-detail",
-			"id": "4260e596-e902-4ecf-b823-a696389c614e",
-			"url": "localhost:5000/drinks-detail",
-			"time": "2019-12-24T17:44:43.302Z",
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				},
-				"value contains drinks array": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "/drinks",
-			"id": "4e0cc70e-88b7-45d5-a2ec-83adf72107f2",
-			"url": "localhost:5000/drinks",
-			"time": "2019-12-24T17:44:43.302Z",
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "/drinks/1",
-			"id": "365e7a5a-30bb-4397-b6fc-9efb34968adc",
-			"url": "localhost:5000/drinks/1",
-			"time": "2019-12-24T17:44:43.302Z",
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				},
-				"value contains drinks array": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "/drinks/1",
-			"id": "b257e365-7f19-43d6-9496-9370d4d14f2a",
-			"url": "localhost:5000/drinks/1",
-			"time": "2019-12-24T17:44:43.302Z",
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
+			"listen": "test",
+			"script": {
+				"id": "e5766f23-c7f1-472b-ae34-825a91147815",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
 			}
 		}
 	],
-	"synced": false
+	"variable": [
+		{
+			"id": "7da0fa13-ecd9-4d7d-8e38-fde2c81cfdaf",
+			"key": "host",
+			"value": "localhost:5000",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
 }
